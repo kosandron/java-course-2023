@@ -10,7 +10,7 @@ public final class Task5 {
 
         while (k != 0) {
             if (k % 2 == 1) {
-                res *= k;
+                res *= number;
             }
             number *= number;
             k >>= 1;
