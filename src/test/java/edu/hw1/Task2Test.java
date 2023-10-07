@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class Task2Test {
     @Test
     @DisplayName("Тест 1: 100")
-    void Test1() {
+    void random_test1() {
         // Arrange
         int number = 100;
 
@@ -21,7 +21,7 @@ public class Task2Test {
 
     @Test
     @DisplayName("Тест 2: 3")
-    void Test2() {
+    void one_digit_number_test2() {
         // Arrange
         int number = 3;
 
@@ -35,9 +35,9 @@ public class Task2Test {
 
     @Test
     @DisplayName("Тест 3: 0")
-    void Test3() {
+    void null_test3() {
         // Arrange
-        int number = 3;
+        int number = 0;
 
         // Act
         int timeInSeconds = Task2.countDigits(number);
@@ -49,7 +49,7 @@ public class Task2Test {
 
     @Test
     @DisplayName("Тест 4: -2234")
-    void Test4() {
+    void negative_number_random_test4() {
         // Arrange
         int number = -2234;
 
@@ -63,9 +63,23 @@ public class Task2Test {
 
     @Test
     @DisplayName("Тест 5: -3")
-    void Test5() {
+    void negative_number_one_digit_random_test5() {
         // Arrange
         int number = -3;
+
+        // Act
+        int timeInSeconds = Task2.countDigits(number);
+
+        // Assert
+        assertThat(timeInSeconds)
+            .isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("Тест 6: -0")
+    void minus_null_test6() {
+        // Arrange
+        int number = -0;
 
         // Act
         int timeInSeconds = Task2.countDigits(number);

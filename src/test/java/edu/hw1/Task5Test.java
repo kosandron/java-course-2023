@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class Task5Test {
     @Test
     @DisplayName("Test 1")
-    void Test1() {
+    void test1() {
         // Arrange
         int number = 11211230;
 
@@ -21,7 +21,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 2")
-    void Test2() {
+    void test2() {
         // Arrange
         int number = 13001120;
 
@@ -35,7 +35,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 3")
-    void Test3() {
+    void test3() {
         // Arrange
         int number = 23336014;
 
@@ -49,7 +49,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 4")
-    void Test4() {
+    void test4() {
         // Arrange
         int number = 11;
 
@@ -63,7 +63,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 5: 32455 -> 595")
-    void Test5() {
+    void test5() {
         // Arrange
         int number = 32455;
 
@@ -77,7 +77,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 6")
-    void Test6() {
+    void test6() {
         // Arrange
         int number = 32456;
 
@@ -91,7 +91,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 7")
-    void Test7() {
+    void test7() {
         // Arrange
         int number = 32457;
 
@@ -105,7 +105,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 8: current sum is > 9")
-    void Test8() {
+    void big_sum_test() {
         // Arrange
         int number = 325632;
 
@@ -118,8 +118,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 9")
-    void Test9() {
+    @DisplayName("Test 9: 1")
+    void one_digit_test() {
         // Arrange
         int number = 1;
 
@@ -133,7 +133,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 10")
-    void Test10() {
+    void test10() {
         // Arrange
         int number = 1345;
 

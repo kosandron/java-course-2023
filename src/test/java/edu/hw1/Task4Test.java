@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task4Test {
     @Test
-    @DisplayName("Test 1")
-    void Test1() {
+    @DisplayName("Test 1: 123456")
+    void random_test1() {
         // Arrange
         String str = "123456";
 
@@ -21,7 +21,7 @@ public class Task4Test {
 
     @Test
     @DisplayName("Test 2")
-    void Test2() {
+    void random_test2() {
         // Arrange
         String str = "hTsii  s aimex dpus rtni.g";
 
@@ -35,7 +35,7 @@ public class Task4Test {
 
     @Test
     @DisplayName("Test 3")
-    void Test3() {
+    void random_test3() {
         // Arrange
         String str = "badce";
 
@@ -48,8 +48,8 @@ public class Task4Test {
     }
 
     @Test
-    @DisplayName("Test 4")
-    void Test4() {
+    @DisplayName("Test 4: one char")
+    void one_char_test() {
         // Arrange
         String str = "a";
 
@@ -59,5 +59,19 @@ public class Task4Test {
         // Assert
         assertThat(rightString)
             .isEqualTo("a");
+    }
+
+    @Test
+    @DisplayName("Test 5: empty string")
+    void empty_string_test() {
+        // Arrange
+        String str = "";
+
+        // Act
+        String rightString = Task4.fixString(str);
+
+        // Assert
+        assertThat(rightString)
+            .isEqualTo("");
     }
 }

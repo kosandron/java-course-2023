@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task1Test {
     @Test
-    @DisplayName("Корректный тест 1")
-    void SuccessTest1() {
+    @DisplayName("Test 1: normal time")
+    void normal_time_test1() {
         // Arrange
         String str = "17:03";
 
@@ -16,28 +16,42 @@ public class Task1Test {
 
         // Assert
         assertThat(timeInSeconds)
-            .isEqualTo(1023);
+            .isEqualTo(17 * 60 + 3);
     }
 
     @Test
-    @DisplayName("Корректный тест 2: однозначные минуты")
-    void SuccessTest2() {
+    @DisplayName("Test 2: однозначные минуты")
+    void one_number_minute_test() {
         // Arrange
-        String str = "9:12";
+        String str = "09:12";
 
         // Act
         int timeInSeconds = Task1.minutesToSeconds(str);
 
         // Assert
         assertThat(timeInSeconds)
-            .isEqualTo(552);
+            .isEqualTo(9 * 60 + 12);
     }
 
     @Test
-    @DisplayName("Корректный тест 3: только секунды")
-    void SuccessTest3() {
+    @DisplayName("Test 3: однозначные минуты")
+    void null_minute_test() {
         // Arrange
         String str = "0:59";
+
+        // Act
+        int timeInSeconds = Task1.minutesToSeconds(str);
+
+        // Assert
+        assertThat(timeInSeconds)
+            .isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("Test 4: только секунды")
+    void only_seconds_test() {
+        // Arrange
+        String str = "00:59";
 
         // Act
         int timeInSeconds = Task1.minutesToSeconds(str);
@@ -48,10 +62,10 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Корректный тест 4: время = 0")
-    void SuccessTest4() {
+    @DisplayName("Test 5: время = 0")
+    void null_time_test() {
         // Arrange
-        String str = "0:0";
+        String str = "00:00";
 
         // Act
         int timeInSeconds = Task1.minutesToSeconds(str);
@@ -62,8 +76,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Корректный тест 5: много минут")
-    void SuccessTest5() {
+    @DisplayName("Test 5: много минут")
+    void a_lot_of_hours_test() {
         // Arrange
         String str = "9998:34";
 
@@ -72,12 +86,12 @@ public class Task1Test {
 
         // Assert
         assertThat(timeInSeconds)
-            .isEqualTo(599914);
+            .isEqualTo(9998 * 60 + 34);
     }
 
     @Test
-    @DisplayName("Ошибочный тест 1")
-    void ErrorTest1() {
+    @DisplayName("Test 7: a lot of seconds - 60")
+    void a_lot_of_seconds_test1() {
         // Arrange
         String str = "12:60";
 
@@ -90,8 +104,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 2")
-    void ErrorTest2() {
+    @DisplayName("Test 8: a lot of seconds - > 60")
+    void a_lot_of_seconds_test2() {
         // Arrange
         String str = "12:124";
 
@@ -104,8 +118,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 3")
-    void ErrorTest3() {
+    @DisplayName("Test 9: a lot of hours and seconds")
+    void a_lot_of_seconds_test3() {
         // Arrange
         String str = "1442:61";
 
@@ -118,8 +132,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 4: null")
-    void ErrorTest4() {
+    @DisplayName("Test 10: null")
+    void null_string() {
         // Arrange
         String str = null;
 
@@ -132,8 +146,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 5: another symbols")
-    void ErrorTest5() {
+    @DisplayName("Test 11: another symbols")
+    void another_chars_test() {
         // Arrange
         String str = "145:t45";
 
@@ -146,8 +160,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 6: 2 \':\'")
-    void ErrorTest6() {
+    @DisplayName("Test 12: 2 \':\'")
+    void triple_time_test() {
         // Arrange
         String str = "145::54";
 
@@ -160,8 +174,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 6: no :")
-    void ErrorTest7() {
+    @DisplayName("Test 13: no :")
+    void one_time_test() {
         // Arrange
         String str = "14554";
 
@@ -174,10 +188,24 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Ошибочный тест 6: 433:")
-    void ErrorTest8() {
+    @DisplayName("Test 14: 433:")
+    void no_seconds_test() {
         // Arrange
         String str = "433:";
+
+        // Act
+        int timeInSeconds = Task1.minutesToSeconds(str);
+
+        // Assert
+        assertThat(timeInSeconds)
+            .isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("Test 15: -00:01")
+    void negative_time_test() {
+        // Arrange
+        String str = "-00:01";
 
         // Act
         int timeInSeconds = Task1.minutesToSeconds(str);

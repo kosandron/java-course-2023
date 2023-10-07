@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class Task7Test {
     @Test
     @DisplayName("Test 1")
-    void Test1() {
+    void test1() {
         // Arrange
         int number = 8;
         int k = 1;
@@ -22,7 +22,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 2")
-    void Test2() {
+    void test2() {
         // Arrange
         int number = 16;
         int k = 1;
@@ -37,7 +37,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 3")
-    void Test3() {
+    void test3() {
         // Arrange
         int number = 17;
         int k = 2;
@@ -52,7 +52,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 4")
-    void Test4() {
+    void test4() {
         // Arrange
         int number = 1;
         int k = 2;
@@ -67,7 +67,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 5")
-    void Test5() {
+    void test5() {
         // Arrange
         int number = 3;
         int k = 3;
@@ -81,8 +81,8 @@ public class Task7Test {
     }
 
     @Test
-    @DisplayName("Test 6")
-    void Test6() {
+    @DisplayName("Test 6: negative steps")
+    void negative_steps_test1() {
         // Arrange
         int number = 17;
         int k = -3;
@@ -96,8 +96,8 @@ public class Task7Test {
     }
 
     @Test
-    @DisplayName("Test 7")
-    void Test7() {
+    @DisplayName("Test 7: negative steps")
+    void negative_steps_test2() {
         // Arrange
         int number = 17;
         int k = -2;
@@ -112,7 +112,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 8")
-    void Test8() {
+    void test8() {
         // Arrange
         int number = 0;
         int k = 2;
@@ -127,7 +127,7 @@ public class Task7Test {
 
     @Test
     @DisplayName("Test 9")
-    void Test9() {
+    void test9() {
         // Arrange
         int number = 15;
         int k = 2;

@@ -1,7 +1,8 @@
 package edu.hw1;
 
 public final class Task7 {
-    private Task7() { }
+    private Task7() {
+    }
 
     public static int findNumberTwoPower(int value) {
         int number = value;
