@@ -9,15 +9,15 @@ public final class Task4 {
             throw new NullPointerException();
         }
 
-        StringBuilder buffer = new StringBuilder(str);
+        StringBuilder builder = new StringBuilder(str);
         for (int i = 0; i < (str.length() / 2) * 2; i++) {
             if (i % 2 == 0) {
-                buffer.setCharAt(i + 1, str.charAt(i));
+                builder.setCharAt(i + 1, str.charAt(i));
             } else {
-                buffer.setCharAt(i - 1, str.charAt(i));
+                builder.setCharAt(i - 1, str.charAt(i));
             }
         }
 
-        return buffer.toString();
+        return builder.toString();
     }
 }

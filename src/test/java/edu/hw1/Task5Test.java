@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task5Test {
     @Test
-    @DisplayName("Test 1")
-    void test1() {
+    @DisplayName("Test: 11211230")
+    void randomTestOne() {
         // Arrange
         int number = 11211230;
 
@@ -20,8 +20,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 2")
-    void test2() {
+    @DisplayName("Test: 13001120")
+    void randomTestTwo() {
         // Arrange
         int number = 13001120;
 
@@ -34,8 +34,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 3")
-    void test3() {
+    @DisplayName("Test: 23336014")
+    void randomTestThree() {
         // Arrange
         int number = 23336014;
 
@@ -48,8 +48,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 4")
-    void test4() {
+    @DisplayName("Test: 11")
+    void isPalindromeAtBeginTest() {
         // Arrange
         int number = 11;
 
@@ -62,8 +62,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 5: 32455 -> 595")
-    void test5() {
+    @DisplayName("Test: 32455 -> 595")
+    void rightOrderOfSumOfDigitsTest() {
         // Arrange
         int number = 32455;
 
@@ -76,8 +76,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 6")
-    void test6() {
+    @DisplayName("Test: 32456")
+    void randomTestFour() {
         // Arrange
         int number = 32456;
 
@@ -90,8 +90,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 7")
-    void test7() {
+    @DisplayName("Test: 32457")
+    void randomTestFive() {
         // Arrange
         int number = 32457;
 
@@ -105,7 +105,7 @@ public class Task5Test {
 
     @Test
     @DisplayName("Test 8: current sum is > 9")
-    void big_sum_test() {
+    void bigSumTest() {
         // Arrange
         int number = 325632;
 
@@ -118,8 +118,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 9: 1")
-    void one_digit_test() {
+    @DisplayName("Test: 1")
+    void oneDigitTest() {
         // Arrange
         int number = 1;
 
@@ -132,8 +132,8 @@ public class Task5Test {
     }
 
     @Test
-    @DisplayName("Test 10")
-    void test10() {
+    @DisplayName("Test: 1345")
+    void randomTestSix() {
         // Arrange
         int number = 1345;
 

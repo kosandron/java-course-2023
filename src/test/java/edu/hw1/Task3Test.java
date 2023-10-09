@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task3Test {
     @Test
-    @DisplayName("Test 1")
-    void random_test0() {
+    @DisplayName("Test: random")
+    void randomTest() {
         // Arrange
         int[] a = new int[] {1, 2, 3, 4, 5};
         int[] b = new int[] {0, 2, 3, 4, 6};
@@ -21,8 +21,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 2: minA1 == minA2")
-    void mines_equal() {
+    @DisplayName("Test: minA1 == minA2")
+    void minesEqualTest() {
         // Arrange
         int[] a = new int[] {1, 2, 3, 4, 5};
         int[] b = new int[] {1, 2, 3, 4, 6};
@@ -36,8 +36,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 3: maxA1 == maxA2")
-    void maxes_equals() {
+    @DisplayName("Test: maxA1 == maxA2")
+    void maxesEqualsTest() {
         // Arrange
         int[] a = new int[] {1, 2, 3, 4, 6};
         int[] b = new int[] {0, 2, 3, 4, 6};
@@ -51,8 +51,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 4: maxA1 == maxA2 and minA1 == minA2")
-    void min_equal_min_and_max_equal_max_test4() {
+    @DisplayName("Test: maxA1 == maxA2 and minA1 == minA2")
+    void minEqualMinAndMaxEqualMaxTest() {
         // Arrange
         int[] a = new int[] {1, 2, 1, 3, 6};
         int[] b = new int[] {5, 1, 3, 6, 2};
@@ -66,8 +66,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 5: random shuffle")
-    void random_test1() {
+    @DisplayName("Test: random shuffle")
+    void randomShuffleTest() {
         // Arrange
         int[] a = new int[] {1, 4, 2, -1, 4, 43, -21};
         int[] b = new int[] {5, 3, 6, -10, 21, 34, -14, 45};
@@ -81,8 +81,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 6")
-    void random_test2() {
+    @DisplayName("Test: big in small")
+    void firstArrayIsMoreSecondTest() {
         // Arrange
         int[] a = new int[] {1, 2, 3, 4};
         int[] b = new int[] {2, 3};
@@ -96,8 +96,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 7: same numbers")
-    void same_numbers_test() {
+    @DisplayName("Test: same numbers")
+    void sameNumbersTest() {
         // Arrange
         int[] a = new int[] {9, 9, 8};
         int[] b = new int[] {8, 9};
@@ -111,8 +111,8 @@ public class Task3Test {
     }
 
     @Test
-    @DisplayName("Test 8")
-    void random_test3() {
+    @DisplayName("Test: decrease sorted arrays")
+    void decreaseSortedArraysTest() {
         // Arrange
         int[] a = new int[] {3, 1};
         int[] b = new int[] {4, 0};

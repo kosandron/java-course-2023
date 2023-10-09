@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task6Test {
     @Test
-    @DisplayName("Test 1: 3524")
-    void random_test1() {
+    @DisplayName("Test: 3524")
+    void randomTestOne() {
         // Arrange
         int number = 3524;
 
@@ -20,8 +20,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 2: 6621")
-    void random_test2() {
+    @DisplayName("Test: 6621")
+    void randomTestTwo() {
         // Arrange
         int number = 6621;
 
@@ -34,8 +34,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 3: 6554")
-    void random_test3() {
+    @DisplayName("Test: 6554")
+    void randomTestThree() {
         // Arrange
         int number = 6554;
 
@@ -48,8 +48,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 4: 1234")
-    void random_test4() {
+    @DisplayName("Test: 1234")
+    void randomTestFour() {
         // Arrange
         int number = 1234;
 
@@ -62,8 +62,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 5: 6174!")
-    void null_answer_test() {
+    @DisplayName("Test: 6174 - answer = 0!")
+    void nullAnswerTest() {
         // Arrange
         int number = 6174;
 
@@ -76,8 +76,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 6: small number")
-    void small_number() {
+    @DisplayName("Test: small number")
+    void smallNumber() {
         // Arrange
         int number = 34;
 
@@ -90,8 +90,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 7: 1001")
-    void test7() {
+    @DisplayName("Test: 1001")
+    void lowerBoundTest() {
         // Arrange
         int number = 1001;
 
@@ -104,8 +104,8 @@ public class Task6Test {
     }
 
     @Test
-    @DisplayName("Test 8: 1111 - same digits")
-    void same_digits_test1() {
+    @DisplayName("Test: 1111 - same digits")
+    void sameDigitsTest1() {
         // Arrange
         int number = 1111;
 
@@ -119,7 +119,7 @@ public class Task6Test {
 
     @Test
     @DisplayName("Test 8: 1000 - small number")
-    void test9() {
+    void smallNumberTest() {
         // Arrange
         int number = 1000;
 
@@ -133,7 +133,7 @@ public class Task6Test {
 
     @Test
     @DisplayName("Test 8: 9999 - same digits")
-    void same_digits_test2() {
+    void sameDigitsTest2() {
         // Arrange
         int number = 9999;
 

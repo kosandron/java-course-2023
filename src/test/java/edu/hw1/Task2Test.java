@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task2Test {
     @Test
-    @DisplayName("Тест 1: 100")
-    void random_test1() {
+    @DisplayName("Тест: 100")
+    void hundredValueTest() {
         // Arrange
         int number = 100;
 
@@ -20,8 +20,8 @@ public class Task2Test {
     }
 
     @Test
-    @DisplayName("Тест 2: 3")
-    void one_digit_number_test2() {
+    @DisplayName("Тест: 3 - one digit")
+    void oneDigitNumberTest() {
         // Arrange
         int number = 3;
 
@@ -34,8 +34,8 @@ public class Task2Test {
     }
 
     @Test
-    @DisplayName("Тест 3: 0")
-    void null_test3() {
+    @DisplayName("Тест: 0 - null")
+    void nullValueTest() {
         // Arrange
         int number = 0;
 
@@ -48,8 +48,8 @@ public class Task2Test {
     }
 
     @Test
-    @DisplayName("Тест 4: -2234")
-    void negative_number_random_test4() {
+    @DisplayName("Тест: -2234 - negative number")
+    void negativeNumberTest() {
         // Arrange
         int number = -2234;
 
@@ -62,8 +62,8 @@ public class Task2Test {
     }
 
     @Test
-    @DisplayName("Тест 5: -3")
-    void negative_number_one_digit_random_test5() {
+    @DisplayName("Тест: -3 - negative one-digit number")
+    void negativeNumberOneDigitTest() {
         // Arrange
         int number = -3;
 
@@ -77,7 +77,7 @@ public class Task2Test {
 
     @Test
     @DisplayName("Тест 6: -0")
-    void minus_null_test6() {
+    void minusNullValueTest() {
         // Arrange
         int number = -0;
 

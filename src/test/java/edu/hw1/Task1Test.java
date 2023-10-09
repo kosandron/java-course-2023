@@ -6,8 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task1Test {
     @Test
-    @DisplayName("Test 1: normal time")
-    void normal_time_test1() {
+    @DisplayName("Test: valid time")
+    void normalTimeTest() {
         // Arrange
         String str = "17:03";
 
@@ -20,8 +20,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 2: однозначные минуты")
-    void one_number_minute_test() {
+    @DisplayName("Test: однозначные минуты")
+    void oneDigitMinuteTest() {
         // Arrange
         String str = "09:12";
 
@@ -34,8 +34,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 3: однозначные минуты")
-    void null_minute_test() {
+    @DisplayName("Test: однозначные минуты")
+    void nullMinuteTest() {
         // Arrange
         String str = "0:59";
 
@@ -48,8 +48,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 4: только секунды")
-    void only_seconds_test() {
+    @DisplayName("Test: только секунды")
+    void onlySecondsTest() {
         // Arrange
         String str = "00:59";
 
@@ -62,8 +62,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 5: время = 0")
-    void null_time_test() {
+    @DisplayName("Test: время = 0")
+    void nullTimeTest() {
         // Arrange
         String str = "00:00";
 
@@ -76,8 +76,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 5: много минут")
-    void a_lot_of_hours_test() {
+    @DisplayName("Test: много минут")
+    void aLotOfHours_Test() {
         // Arrange
         String str = "9998:34";
 
@@ -90,8 +90,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 7: a lot of seconds - 60")
-    void a_lot_of_seconds_test1() {
+    @DisplayName("Test: a lot of seconds - 60")
+    void secondsEqualMinuteTest() {
         // Arrange
         String str = "12:60";
 
@@ -104,8 +104,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 8: a lot of seconds - > 60")
-    void a_lot_of_seconds_test2() {
+    @DisplayName("Test: a lot of seconds - > 60")
+    void aLotOfSecondsTest() {
         // Arrange
         String str = "12:124";
 
@@ -118,8 +118,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 9: a lot of hours and seconds")
-    void a_lot_of_seconds_test3() {
+    @DisplayName("Test: a lot of hours and seconds")
+    void aLotOfHoursAndSecondsTest() {
         // Arrange
         String str = "1442:61";
 
@@ -132,8 +132,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 10: null")
-    void null_string() {
+    @DisplayName("Test: null")
+    void stringIsNullTest() {
         // Arrange
         String str = null;
 
@@ -146,8 +146,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 11: another symbols")
-    void another_chars_test() {
+    @DisplayName("Test: another symbols")
+    void anotherCharsTest() {
         // Arrange
         String str = "145:t45";
 
@@ -160,8 +160,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 12: 2 \':\'")
-    void triple_time_test() {
+    @DisplayName("Test: 2 \':\'")
+    void doubleColonTest() {
         // Arrange
         String str = "145::54";
 
@@ -174,8 +174,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 13: no :")
-    void one_time_test() {
+    @DisplayName("Test: no :")
+    void notColontTest() {
         // Arrange
         String str = "14554";
 
@@ -188,8 +188,8 @@ public class Task1Test {
     }
 
     @Test
-    @DisplayName("Test 14: 433:")
-    void no_seconds_test() {
+    @DisplayName("Test: 433:")
+    void noSecondsTest() {
         // Arrange
         String str = "433:";
 
@@ -203,7 +203,7 @@ public class Task1Test {
 
     @Test
     @DisplayName("Test 15: -00:01")
-    void negative_time_test() {
+    void negativeTimeValueTest() {
         // Arrange
         String str = "-00:01";
 
