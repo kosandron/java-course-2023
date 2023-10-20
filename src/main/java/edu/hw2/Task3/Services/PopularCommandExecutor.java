@@ -25,11 +25,11 @@ public final class PopularCommandExecutor {
         tryExecute("apt update && apt upgrade -y");
     }
 
-    public void tryExecute(String command) {
+    public boolean tryExecute(String command) {
         for (int i = 0; i < maxAttempts; i++) {
             try (Connection connection = manager.getConnection()) {
                 LOGGER.info("Success!");
-                return;
+                return true;
             } catch (ConnectionException e) {
                 LOGGER.info("Attempt " + i + 1 + ": connection exception.");
             } catch (Exception e) {
@@ -37,6 +37,7 @@ public final class PopularCommandExecutor {
             }
         }
         LOGGER.info("Failure!");
-        throw new ConnectionException();
+        //throw new ConnectionException();
+        return false;
     }
 }
