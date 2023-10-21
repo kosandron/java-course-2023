@@ -10,8 +10,8 @@ import java.util.Random;
 public final class Dictionary {
     private Dictionary() { }
 
-    private static final  Map<Integer, List<String>> wordsBySize = new HashMap<>() { };
-    private static final Random random = new Random();
+    private static Map<Integer, List<String>> wordsBySize = new HashMap<>() { };
+    private static Random random = new Random();
 
     public static String getRandomWordBySize(Integer size) {
         if (size <= 1) {
