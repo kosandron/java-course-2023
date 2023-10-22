@@ -12,7 +12,7 @@ public final class Task1 {
                 if (str.charAt(i) == str.toUpperCase().charAt(i)) {
                     builder.replace(i, i + 1, Character.toString('Z' - (str.charAt(i) - 'A')));
                 } else {
-                    builder.replace(i, i + 1, Character.toString( 'z' - (str.charAt(i) - 'a')));
+                    builder.replace(i, i + 1, Character.toString('z' - (str.charAt(i) - 'a')));
                 }
             }
         }
