@@ -8,10 +8,9 @@ import java.util.Map;
 import java.util.Random;
 
 public final class Dictionary {
-    private Dictionary() { }
-
+    private final static Random RANDOM = new Random();
     private static Map<Integer, List<String>> wordsBySize = new HashMap<>() { };
-    private static Random random = new Random();
+    private Dictionary() { }
 
     public static String getRandomWordBySize(Integer size) {
         if (size <= 1) {
@@ -19,7 +18,7 @@ public final class Dictionary {
         }
 
         if (wordsBySize.containsKey(size)) {
-            return wordsBySize.get(size).get(random.nextInt() % wordsBySize.get(size).size());
+            return wordsBySize.get(size).get(RANDOM.nextInt() % wordsBySize.get(size).size());
         } else {
             throw new IllegalArgumentException("No words with this size!");
         }

@@ -8,8 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ConsoleIO implements InputOutputManager {
-    private final Scanner scanner = new Scanner(System.in);
     private final static Logger LOGGER = LogManager.getLogger();
+    private final Scanner scanner = new Scanner(System.in);
 
     private boolean isValidLetter(String input, String openWord) {
         if (input.length() != 1) {

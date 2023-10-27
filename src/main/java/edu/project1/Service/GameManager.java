@@ -8,13 +8,13 @@ import edu.project1.Entities.Win;
 import edu.project1.Models.Status;
 
 public final class GameManager {
+    private final InputOutputManager console;
+    private final int maxAttempt;
     private Status status;
     private int wordSize;
     private int attempt = 0;
-    private final int maxAttempt;
     private String secretWord;
     private StringBuilder userWord;
-    private final InputOutputManager console;
 
     @SuppressWarnings("ReturnCount")
     public void tryGuess() {

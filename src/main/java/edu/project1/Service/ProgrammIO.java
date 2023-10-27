@@ -2,22 +2,20 @@ package edu.project1.Service;
 
 import edu.project1.Entities.Dictionary;
 import edu.project1.Entities.State;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ProgrammIO implements InputOutputManager {
-    private final ArrayList<String> stringInput;
-    private int stringInputCounter;
-
-    private final ArrayList<Integer> intInput;
-    private int intInputCounter;
-    private final Scanner scanner = new Scanner(System.in);
     private final static Logger LOGGER = LogManager.getLogger();
+    private final List<String> stringInput;
+    private final List<Integer> intInput;
+    private int stringInputCounter;
+    private int intInputCounter;
 
-    public ProgrammIO(ArrayList<String> stringInput, ArrayList<Integer> intInput) {
+    public ProgrammIO(List<String> stringInput, List<Integer> intInput) {
         stringInputCounter = 0;
         intInputCounter = 0;
 
