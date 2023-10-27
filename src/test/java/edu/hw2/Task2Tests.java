@@ -21,6 +21,6 @@ public class Task2Tests {
         rect = rect.setWidth(20);
         rect = rect.setHeight(10);
 
-        assertThat(rect.area()).isEqualTo(200.0);
+        assertThat(200.0).isEqualTo(rect.area());
     }
 }

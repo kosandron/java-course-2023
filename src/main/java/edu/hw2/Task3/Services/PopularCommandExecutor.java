@@ -37,7 +37,6 @@ public final class PopularCommandExecutor {
             }
         }
         LOGGER.info("Failure!");
-        //throw new ConnectionException();
         return false;
     }
 }

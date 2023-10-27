@@ -7,7 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 public class FaultyConnection implements Connection {
     private final static Logger LOGGER = LogManager.getLogger();
-    Random random = new Random();
+    private final static Random RANDOM = new Random();
+    private final static int MIN_SUCCESS_FREQUENCY = 100;
     private int callCounter = 0;
 
     @Override
@@ -16,10 +17,9 @@ public class FaultyConnection implements Connection {
     }
 
     @Override
-    @SuppressWarnings("MagicNumber")
     public void execute(String command) {
         callCounter++;
-        if (random.nextBoolean() && callCounter < 100) {
+        if (RANDOM.nextBoolean() && callCounter < MIN_SUCCESS_FREQUENCY) {
             throw new ConnectionException();
         }
         LOGGER.info(command);

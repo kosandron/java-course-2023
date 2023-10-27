@@ -1,6 +1,5 @@
 package edu.hw2;
 
-import edu.hw2.Task3.Exceptions.ConnectionException;
 import edu.hw2.Task3.Services.DefaultConnectionManager;
 import edu.hw2.Task3.Services.FaultyConnectionManager;
 import edu.hw2.Task3.Services.PopularCommandExecutor;
@@ -44,11 +43,10 @@ public class Task3Tests {
             PopularCommandExecutor executor = new PopularCommandExecutor(new DefaultConnectionManager(), 1);
             // Act
             boolean result = executor.tryExecute("something");
-
-            // Assert
             counter += result ? 1 : 0;
         }
 
+        // Assert
         assertThat(counter).isGreaterThan(0);
     }
 }
