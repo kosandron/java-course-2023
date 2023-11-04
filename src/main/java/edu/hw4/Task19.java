@@ -23,6 +23,11 @@ public final class Task19 {
     }
 
     public static Map<String, Set<ValidationError>> validateAnimals(List<Animal> animals) {
+        errors = new HashSet<>();
+        errors.add(new EmptyNameError());
+        errors.add(new NegativeAgeError());
+        errors.add(new NegativeHeightError());
+        errors.add(new NegativeWeightError());
         return animals.stream()
             .filter(animal -> errors.stream().anyMatch(error -> !error.isValid(animal)))
             .collect(Collectors.toMap(p -> p.name(), p -> errors.stream().filter(error -> !error.isValid(p)).collect(

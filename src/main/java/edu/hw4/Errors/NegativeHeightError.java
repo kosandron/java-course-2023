@@ -2,7 +2,7 @@ package edu.hw4.Errors;
 
 import edu.hw4.Animal;
 
-public class NegativeHeightError extends  ValidationError {
+public class NegativeHeightError extends ValidationError {
     @Override
     public String getDescription() {
         return "Height is negative number!";
@@ -10,6 +10,6 @@ public class NegativeHeightError extends  ValidationError {
 
     @Override
     public boolean isValid(Animal animal) {
-        return animal.height() < 0;
+        return animal.height() > 0;
     }
 }

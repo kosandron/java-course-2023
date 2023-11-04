@@ -1,13 +1,22 @@
 package edu.hw4;
 
+import edu.hw4.Errors.EmptyNameError;
+import edu.hw4.Errors.NegativeAgeError;
+import edu.hw4.Errors.NegativeHeightError;
+import edu.hw4.Errors.ValidationError;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TasksTests {
@@ -344,6 +353,108 @@ public class TasksTests {
 
         // Act
         Integer result = Task15.weightSumAnimalsInAgeInterval(list, 2, 3);
+
+        // Assert
+        assertThat(answer).isEqualTo(result);
+    }
+
+    @Test
+    @DisplayName("Task16.sortByTypeSexName")
+    void task16Test() {
+        // Arrange
+        List<Animal> list = new ArrayList<Animal>();
+        list.add(cat);
+        list.add(parrot);
+        list.add(dog);
+        list.add(new Animal("Uppi", Animal.Type.CAT, Animal.Sex.F, 12, 125, 24, true));
+        list.add(new Animal("Zuppi", Animal.Type.CAT, Animal.Sex.F, 11, 123, 22, false));
+        List<Animal> answer = new ArrayList<Animal>();
+        answer.add(cat);
+        answer.add(new Animal("Uppi", Animal.Type.CAT, Animal.Sex.F, 12, 125, 24, true));
+        answer.add(new Animal("Zuppi", Animal.Type.CAT, Animal.Sex.F, 11, 123, 22, false));
+        answer.add(dog);
+        answer.add(parrot);
+
+        // Act
+        List<Animal> result = Task16.sortByTypeSexName(list);
+
+        // Assert
+        assertThat(answer).isEqualTo(result);
+    }
+
+
+    @Test
+    @DisplayName("Task18.mostHeavyFish")
+    void task18Test() {
+        // Arrange
+        List<Animal> list1 = new ArrayList<Animal>();
+        list1.add(spider);
+        list1.add(cat);
+        list1.add(fish);
+        List<Animal> list2 = new ArrayList<Animal>();
+        list2.add(new Animal("Uppi", Animal.Type.FISH, Animal.Sex.F, 12, 125, 24, true));
+        list2.add(new Animal("Zuppi", Animal.Type.FISH, Animal.Sex.F, 11, 123, 22, false));
+
+        Animal answer = new Animal("Uppi", Animal.Type.FISH, Animal.Sex.F, 12, 125, 24, true);
+
+        // Act
+        Animal result = Task18.mostHeavyFish(Stream.of(list1, list2).collect(Collectors.toList()));
+
+        // Assert
+        assertThat(answer).isEqualTo(result);
+    }
+
+    @Test
+    @DisplayName("Task17.spidersBiteMoreThanDogs")
+    void task17Test() {
+        // Arrange
+        List<Animal> list = new ArrayList<Animal>();
+        list.add(spider);
+        list.add(cat);
+        list.add(spider);
+        list.add(dog);
+        list.add(parrot);
+        list.add(dog);
+        list.add(spider);
+
+        // Act
+        boolean result = Task17.spidersBiteMoreThanDogs(list);
+
+        // Assert
+        assertThat(true).isEqualTo(result);
+    }
+
+    @Test
+    @DisplayName("Task19.validateAnimals")
+    void task19Test() {
+        // Arrange
+        List<Animal> list = new ArrayList<Animal>();
+        list.add(new Animal("", Animal.Type.FISH, Animal.Sex.F, -1, 125, 24, true));
+        list.add(new Animal("He he", Animal.Type.DOG, Animal.Sex.F, 12, -2, 24, true));
+        Map<String, Set<ValidationError>> answer = new HashMap<>();
+        answer.put("", new HashSet<>(Arrays.asList(new EmptyNameError(), new NegativeAgeError())));
+        answer.put("He he", new HashSet<>(Arrays.asList(new NegativeHeightError())));
+
+        // Act
+        Map<String, Set<ValidationError>> result = Task19.validateAnimals(list);
+
+        // Assert
+        assertThat(answer).isEqualTo(result);
+    }
+
+    @Test
+    @DisplayName("Task20.validateAnimals")
+    void task20Test() {
+        // Arrange
+        List<Animal> list = new ArrayList<Animal>();
+        list.add(new Animal("", Animal.Type.FISH, Animal.Sex.F, -1, 125, 24, true));
+        list.add(new Animal("He he", Animal.Type.DOG, Animal.Sex.F, 12, -2, 24, true));
+        Map<String, String> answer = new HashMap<>();
+        answer.put("", "Name is empty or null! Age is negative number!");
+        answer.put("He he", "Height is negative number!");
+
+        // Act
+        Map<String, String> result = Task20.validateAnimals(list);
 
         // Assert
         assertThat(answer).isEqualTo(result);

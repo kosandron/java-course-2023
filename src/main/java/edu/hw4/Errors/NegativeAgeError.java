@@ -10,6 +10,6 @@ public class NegativeAgeError extends ValidationError {
 
     @Override
     public boolean isValid(Animal animal) {
-        return animal.age() < 0;
+        return animal.age() > 0;
     }
 }

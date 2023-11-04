@@ -10,6 +10,6 @@ public class NegativeWeightError extends ValidationError {
 
     @Override
     public boolean isValid(Animal animal) {
-        return animal.weight() < 0;
+        return animal.weight() > 0;
     }
 }

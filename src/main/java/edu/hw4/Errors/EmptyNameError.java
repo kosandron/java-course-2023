@@ -10,6 +10,6 @@ public class EmptyNameError extends ValidationError {
 
     @Override
     public boolean isValid(Animal animal) {
-        return animal.name() == null || animal.name().isEmpty();
+        return !(animal.name() == null || animal.name().isEmpty());
     }
 }
