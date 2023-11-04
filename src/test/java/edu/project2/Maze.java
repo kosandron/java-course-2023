@@ -1,18 +1,18 @@
 package edu.project2;
 
 public class Maze {
-    private final Cell[][] grid;
+    private final Cell[][] field;
     private final Coordinate start;
     private final Coordinate finish;
 
-    public Maze(Cell[][] grid, Coordinate start, Coordinate finish) {
-        if (!validArgs(grid, start, finish)) {
+    public Maze(Cell[][] field, Coordinate start, Coordinate finish) {
+        if (!validArgs(field, start, finish)) {
             throw new IllegalArgumentException();
         }
 
         this.start = start;
         this.finish = finish;
-        this.grid = grid;
+        this.field = field;
     }
 
     private boolean validArgs(Cell[][] field, Coordinate start, Coordinate finish) {
@@ -42,15 +42,15 @@ public class Maze {
     }
 
     public int height() {
-        return grid.length;
+        return field.length;
     }
 
     public int width() {
-        return grid[0].length;
+        return field[0].length;
     }
 
     public Cell get(int x, int y) {
-        return grid[x][y];
+        return field[x][y];
     }
 
     public Cell get(Coordinate coordinate) {

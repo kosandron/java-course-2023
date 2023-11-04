@@ -1,6 +1,6 @@
 package edu.project2;
 
-import edu.project2.Solvers.DFSSolver;
+import edu.project2.Solvers.Solver;
 
 public class DefaultRenderer implements Renderer {
     private String getUpRow(Cell cell) {
@@ -64,10 +64,9 @@ public class DefaultRenderer implements Renderer {
         return currentLine.toString();
     }
 
-    public String renderSolve(Maze maze) {
+    public String renderSolve(Maze maze, Solver solver) {
         StringBuilder map = new StringBuilder(render(maze));
-        DFSSolver dfsSolver = new DFSSolver();
-        for (Coordinate coordinate : dfsSolver.findPath(maze)) {
+        for (Coordinate coordinate : solver.findPath(maze)) {
             printOnMaze(map, maze, coordinate, "*");
         }
         printOnMaze(map, maze, maze.start(), "@");

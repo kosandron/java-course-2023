@@ -17,56 +17,56 @@ public class RecursiveBacktrackingGenerator implements Generator {
             throw new IllegalArgumentException();
         }
 
-        Cell[][] grid = new Cell[height][width];
+        Cell[][] field = new Cell[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                grid[i][j] = new Cell();
+                field[i][j] = new Cell();
             }
         }
 
         int xStart = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
-        int yStart = ((int) (Math.random() * (width - MIN_WIDTH) + 1));
+        int yStart = (int) (Math.random() * (width - MIN_WIDTH) + 1);
         Coordinate start = new Coordinate(xStart, yStart);
 
-        makePassage(grid, xStart, yStart, -1, -1);
+        makePassage(field, xStart, yStart, -1, -1);
 
         int xFinish = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
         int yFinish = (int) (Math.random() * (width - MIN_WIDTH) + 1);
 
-        while (grid[xFinish][yFinish].isNew() || xStart == xFinish && yStart == yFinish) {
+        while (field[xFinish][yFinish].isNew() || xStart == xFinish && yStart == yFinish) {
             xFinish = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
             yFinish = (int) (Math.random() * (width - MIN_WIDTH) + 1);
         }
 
         Coordinate finish = new Coordinate(xFinish, yFinish);
 
-        return new Maze(grid, start, finish);
+        return new Maze(field, start, finish);
     }
 
-    private void breakWall(Cell[][] grid, int x, int y, int xPrev, int yPrev) {
+    private void breakWall(Cell[][] field, int x, int y, int xPrev, int yPrev) {
         if (x < 0 || y < 0 || xPrev < 0 || yPrev < 0) {
             return;
         }
 
         if (x == xPrev + 1) {
-            grid[x][y].breakUpWall();
-            grid[xPrev][yPrev].breakDownWall();
+            field[x][y].breakUpWall();
+            field[xPrev][yPrev].breakDownWall();
         } else if (x == xPrev - 1) {
-            grid[x][y].breakDownWall();
-            grid[xPrev][yPrev].breakUpWall();
+            field[x][y].breakDownWall();
+            field[xPrev][yPrev].breakUpWall();
         } else if (y == yPrev + 1) {
-            grid[x][y].breakLeftWall();
-            grid[xPrev][yPrev].breakRightWall();
+            field[x][y].breakLeftWall();
+            field[xPrev][yPrev].breakRightWall();
         } else if (y == yPrev - 1) {
-            grid[x][y].breakRightWall();
-            grid[xPrev][yPrev].breakLeftWall();
+            field[x][y].breakRightWall();
+            field[xPrev][yPrev].breakLeftWall();
         } else {
             throw new IllegalArgumentException("Strange step!");
         }
     }
 
-    private void makePassage(Cell[][] grid, int x, int y, int xPrev, int yPrev) {
-        breakWall(grid, x, y, xPrev, yPrev);
+    private void makePassage(Cell[][] field, int x, int y, int xPrev, int yPrev) {
+        breakWall(field, x, y, xPrev, yPrev);
 
         List<Coordinate> neighbours = Arrays.asList(
             new Coordinate(x - 1, y),
@@ -77,8 +77,8 @@ public class RecursiveBacktrackingGenerator implements Generator {
         Collections.shuffle(neighbours);
 
         for (Coordinate coordinate : neighbours) {
-            if (canMakePassage(grid, coordinate.row(), coordinate.col())) {
-                makePassage(grid, coordinate.row(), coordinate.col(), x, y);
+            if (canMakePassage(field, coordinate.row(), coordinate.col())) {
+                makePassage(field, coordinate.row(), coordinate.col(), x, y);
             }
         }
     }
