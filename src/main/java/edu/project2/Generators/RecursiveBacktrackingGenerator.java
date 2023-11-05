@@ -6,8 +6,10 @@ import edu.project2.Maze;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class RecursiveBacktrackingGenerator implements Generator {
+    private static final Random RANDOM = new Random();
     private static final int MIN_HEIGHT = 3;
     private static final int MIN_WIDTH = 3;
 
@@ -24,18 +26,18 @@ public class RecursiveBacktrackingGenerator implements Generator {
             }
         }
 
-        int xStart = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
-        int yStart = (int) (Math.random() * (width - MIN_WIDTH) + 1);
+        int xStart = RANDOM.nextInt(height - 1) + 1;
+        int yStart = RANDOM.nextInt(width - 1) + 1;
         Coordinate start = new Coordinate(xStart, yStart);
 
         makePassage(field, xStart, yStart, -1, -1);
 
-        int xFinish = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
-        int yFinish = (int) (Math.random() * (width - MIN_WIDTH) + 1);
+        int xFinish = RANDOM.nextInt(height - 1) + 1;
+        int yFinish = RANDOM.nextInt(width - 1) + 1;
 
         while (field[xFinish][yFinish].isNew() || xStart == xFinish && yStart == yFinish) {
-            xFinish = (int) (Math.random() * (height - MIN_HEIGHT) + 1);
-            yFinish = (int) (Math.random() * (width - MIN_WIDTH) + 1);
+            xFinish = RANDOM.nextInt(height - 1) + 1;
+            yFinish = RANDOM.nextInt(width - 1) + 1;
         }
 
         Coordinate finish = new Coordinate(xFinish, yFinish);
