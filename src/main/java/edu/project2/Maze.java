@@ -20,6 +20,14 @@ public class Maze {
             return false;
         }
 
+        if (start == null) {
+            return false;
+        }
+
+        if (finish == null) {
+            return false;
+        }
+
         int height = field.length;
         int width = field[0].length;
 
@@ -61,7 +69,7 @@ public class Maze {
         return start;
     }
 
-    public Coordinate end() {
+    public Coordinate finish() {
         return finish;
     }
 }

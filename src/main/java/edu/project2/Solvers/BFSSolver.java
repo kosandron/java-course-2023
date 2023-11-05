@@ -22,7 +22,7 @@ public class BFSSolver implements Solver {
         Coordinate currentCoordinate;
         while (!queue.isEmpty()) {
             currentCoordinate = queue.peek();
-            if (currentCoordinate.equals(maze.end())) {
+            if (currentCoordinate.equals(maze.finish())) {
                 break;
             }
 
@@ -52,7 +52,7 @@ public class BFSSolver implements Solver {
             queue.remove();
         }
 
-        currentCoordinate = maze.end();
+        currentCoordinate = maze.finish();
         while (currentCoordinate != null) {
             path.add(currentCoordinate);
             currentCoordinate = prev[currentCoordinate.row()][currentCoordinate.col()];

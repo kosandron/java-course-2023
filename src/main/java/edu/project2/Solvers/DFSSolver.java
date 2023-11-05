@@ -13,7 +13,7 @@ public class DFSSolver implements Solver {
     void dfs(Maze maze, Coordinate coordinate) {
         used[coordinate.row()][coordinate.col()] = true;
         path.add(coordinate);
-        if (coordinate.equals(maze.end())) {
+        if (coordinate.equals(maze.finish())) {
             continueFinding = false;
             return;
         }

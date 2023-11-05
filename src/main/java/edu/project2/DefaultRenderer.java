@@ -67,17 +67,25 @@ public class DefaultRenderer implements Renderer {
         }
 
         printOnMaze(currentLine, maze, maze.start(), POINT);
-        printOnMaze(currentLine, maze, maze.end(), POINT);
+        printOnMaze(currentLine, maze, maze.finish(), POINT);
         return currentLine.toString();
     }
 
     public String renderSolve(Maze maze, Solver solver) {
+        if (maze == null) {
+            throw new NullPointerException();
+        }
+
+        if (solver == null) {
+            throw new NullPointerException();
+        }
+
         StringBuilder map = new StringBuilder(render(maze));
         for (Coordinate coordinate : solver.findPath(maze)) {
             printOnMaze(map, maze, coordinate, PATH);
         }
         printOnMaze(map, maze, maze.start(), POINT);
-        printOnMaze(map, maze, maze.end(), POINT);
+        printOnMaze(map, maze, maze.finish(), POINT);
 
         return map.toString();
     }
