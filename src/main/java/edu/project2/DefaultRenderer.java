@@ -3,29 +3,36 @@ package edu.project2;
 import edu.project2.Solvers.Solver;
 
 public class DefaultRenderer implements Renderer {
+    private static final String WALL = "▆";
+    private static final String EMPTY = " ";
+    private static final String POINT = "@";
+    private static final String PATH = "*";
+
     private String getUpRow(Cell cell) {
-        return cell.hasUpWall() ? "▆▆▆" : "▆ ▆";
+        return cell.hasUpWall() ? WALL + WALL + WALL : WALL + EMPTY + WALL;
     }
 
     private String getDownRow(Cell cell) {
-        return cell.hasDownWall() ? "▆▆▆" : "▆ ▆";
+        return cell.hasDownWall() ? WALL + WALL + WALL : WALL + EMPTY + WALL;
     }
 
+    @SuppressWarnings("ReturnCount")
     private String getCurrentRow(Cell cell) {
         if (cell.isNew()) {
-            return "▆▆▆";
+            return WALL + WALL + WALL;
         }
 
         if (cell.hasLeftWall() && cell.hasRightWall()) {
-            return "▆ ▆";
+            return WALL + EMPTY + WALL;
         } else if (cell.hasRightWall() && !cell.hasLeftWall()) {
-            return "  ▆";
+            return EMPTY + EMPTY + WALL;
         } else if (!cell.hasRightWall() && cell.hasLeftWall()) {
-            return "▆  ";
+            return WALL + EMPTY + EMPTY;
         }
-        return "   ";
+        return EMPTY + EMPTY + EMPTY;
     }
 
+    @SuppressWarnings("MagicNumber")
     private void printOnMaze(StringBuilder map, Maze maze, Coordinate coordinate, String word) {
         map.replace(3 * coordinate.row() * (3 * maze.width() + 1) + 3 * maze.width() + 1 + coordinate.col() * 3 + 1,
             3 * coordinate.row() * (3 * maze.width() + 1) + 3 * maze.width() + 1 + coordinate.col() * 3 + 2, word
@@ -59,18 +66,18 @@ public class DefaultRenderer implements Renderer {
             line3.delete(0, line3.length());
         }
 
-        printOnMaze(currentLine, maze, maze.start(), "@");
-        printOnMaze(currentLine, maze, maze.end(), "@");
+        printOnMaze(currentLine, maze, maze.start(), POINT);
+        printOnMaze(currentLine, maze, maze.end(), POINT);
         return currentLine.toString();
     }
 
     public String renderSolve(Maze maze, Solver solver) {
         StringBuilder map = new StringBuilder(render(maze));
         for (Coordinate coordinate : solver.findPath(maze)) {
-            printOnMaze(map, maze, coordinate, "*");
+            printOnMaze(map, maze, coordinate, PATH);
         }
-        printOnMaze(map, maze, maze.start(), "@");
-        printOnMaze(map, maze, maze.end(), "@");
+        printOnMaze(map, maze, maze.start(), POINT);
+        printOnMaze(map, maze, maze.end(), POINT);
 
         return map.toString();
     }

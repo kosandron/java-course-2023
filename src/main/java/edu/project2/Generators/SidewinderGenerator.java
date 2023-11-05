@@ -6,9 +6,10 @@ import edu.project2.Maze;
 import java.util.Random;
 
 public class SidewinderGenerator implements Generator {
-    private final int MIN_HEIGHT = 3;
-    private final int MIN_WIDTH = 3;
-    public final Random RANDOM = new Random();
+    private static final int MIN_HEIGHT = 3;
+    private static final int MIN_WIDTH = 3;
+    private static final Random RANDOM = new Random();
+
     @Override
     public Maze generate(int height, int width) {
         if (height < MIN_HEIGHT || width < MIN_WIDTH) {

@@ -8,8 +8,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class RecursiveBacktrackingGenerator implements Generator {
-    private final int MIN_HEIGHT = 3;
-    private final int MIN_WIDTH = 3;
+    private static final int MIN_HEIGHT = 3;
+    private static final int MIN_WIDTH = 3;
 
     @Override
     public Maze generate(int height, int width) {
