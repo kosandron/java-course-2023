@@ -16,15 +16,7 @@ public class Maze {
     }
 
     private boolean validArgs(Cell[][] field, Coordinate start, Coordinate finish) {
-        if (field == null || field.length == 0) {
-            return false;
-        }
-
-        if (start == null) {
-            return false;
-        }
-
-        if (finish == null) {
+        if (field == null || field.length == 0 || start == null || finish == null) {
             return false;
         }
 
