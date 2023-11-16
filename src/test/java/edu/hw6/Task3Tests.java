@@ -75,7 +75,7 @@ public class Task3Tests {
     }
 
     @Test
-    void CombinationTest() {
+    void methodCombinationTest() {
         AbstractFilter regularFile = Files::isRegularFile;
         AbstractFilter readable = Files::isReadable;
 

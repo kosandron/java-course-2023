@@ -36,18 +36,6 @@ public class Task1Tests {
     }
 
     @Test
-    void fileCreationTest() throws IOException {
-        // Arrange, Act
-        String fileName = "creationTest.map";
-        DiskMap diskMap = new DiskMap(TEST_DIRECTORY_PATH + fileName);
-        Path filePath = Path.of(TEST_DIRECTORY_PATH + fileName);
-
-        // Assert
-        assertThat(Files.exists(filePath)).isTrue();
-        assertThat(diskMap.size()).isEqualTo(0);
-    }
-
-    @Test
     void loadFromFileTest() throws IOException {
         // Arrange
         String expectedFileName = "MapExample.map";

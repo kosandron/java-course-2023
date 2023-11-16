@@ -27,11 +27,11 @@ public class DiskMap implements Map<String, String> {
 
     private final String filePath;
 
-    DiskMap() {
+    public DiskMap() {
         this(TEMPLATE_NAME);
     }
 
-    DiskMap(String filePath) {
+    public DiskMap(String filePath) {
         this.filePath = filePath;
         File file = new File(filePath);
         try {
@@ -117,6 +117,10 @@ public class DiskMap implements Map<String, String> {
 
     @Override
     public String remove(Object key) {
+        if (!(key instanceof String)) {
+            throw new IllegalArgumentException();
+        }
+
         File inputFile = new File(filePath);
         File tempFile = new File(filePath + "temp");
 
