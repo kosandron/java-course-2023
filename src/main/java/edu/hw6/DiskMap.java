@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DiskMap implements Map<String, String> {
-    private final static String TEMPLATE_NAME = "DiskMap.txt";
+    private final static String TEMPLATE_NAME = "DiskMap.map";
     public final static String SPLITTER = "~";
 
     private final String filePath;
