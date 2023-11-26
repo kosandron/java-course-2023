@@ -24,6 +24,7 @@ public final class OneThreadCalculator {
             }
             totalCount++;
         }
+
         return FACTOR_OF_THE_PI_FORMULA * ((double) circleCount / (double) totalCount);
     }
 
