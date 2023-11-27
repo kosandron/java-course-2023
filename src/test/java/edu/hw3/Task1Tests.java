@@ -60,4 +60,18 @@ public class Task1Tests {
         assertThat(result)
             .isEqualTo("Zmb ullo xzm dirgv xlwv gszg z xlnkfgvi xzm fmwvihgzmw. Tllw kiltiznnvih dirgv xlwv gszg sfnzmh xzm fmwvihgzmw. ― Nzigrm Uldovi");
     }
+
+    @Test
+    @DisplayName("Russian string")
+    void notEnglishTextTest() {
+        // Arrange
+        String str = "Мама мыла раму";
+
+        // Act
+        String result = Task1.atbash(str);
+
+        // Assert
+        assertThat(result)
+            .isEqualTo("Мама мыла раму");
+    }
 }

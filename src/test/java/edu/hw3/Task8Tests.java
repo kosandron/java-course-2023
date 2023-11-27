@@ -7,8 +7,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Vector;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task8Tests {
@@ -29,10 +33,10 @@ public class Task8Tests {
     }
 
     @Test
-    @DisplayName("Set iterating")
-    void iterateSetTest() {
+    @DisplayName("Linked list iterating")
+    void iterateLinkedListTest() {
         // Arrange
-        Set<String> pets = new HashSet<>(Arrays.asList("Dog", "Cat", "Parrot", "Fish"));
+        LinkedList<String> pets = new LinkedList<>(Arrays.asList("Dog", "Cat", "Parrot", "Fish"));
         int i = 3;
         BackwardIterator<String> iter = new BackwardIterator<>(pets);
         List<String> checkList = new ArrayList<>(pets);

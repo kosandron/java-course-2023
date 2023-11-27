@@ -4,7 +4,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Task2Tests {
     @Test
@@ -89,5 +92,16 @@ public class Task2Tests {
         // Assert
         assertThat(result)
             .isEqualTo(new ArrayList<>());
+    }
+
+    @Test
+    @DisplayName("Wrong case")
+    void wrongCaseTest() {
+        // Arrange
+        String line = ")()())(()(())())((())";
+
+        // Act, Assert
+        Throwable exception = assertThrows(IllegalArgumentException.class,() -> Task2.clusterize(line));
+        assertEquals("Cannot clusterize!", exception.getMessage());
     }
 }

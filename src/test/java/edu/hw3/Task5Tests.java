@@ -85,7 +85,7 @@ public class Task5Tests {
     }
 
     @Test
-    @DisplayName("Not full name array, ASC")
+    @DisplayName("Array with some people without surname, ASC")
     void notFullNameASCTest() {
         // Arrange
         String[] namesList = new String[4];
@@ -109,7 +109,7 @@ public class Task5Tests {
     }
 
     @Test
-    @DisplayName("Not full name array, DESC")
+    @DisplayName("Array with some people without surname, DESC")
     void notFullNameDESCTest() {
         // Arrange
         String[] namesList = new String[4];

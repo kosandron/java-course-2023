@@ -6,6 +6,10 @@ public final class Task4 {
 
     @SuppressWarnings("MagicNumber")
     public static String intToRoman(int number) {
+        if (number < 1 || number > 3999) {
+            throw new IllegalArgumentException("Cannot cast to roman!");
+        }
+
         int numberCopy = number;
         int[] letterValues = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] letters = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};

@@ -3,6 +3,8 @@ package edu.hw3;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Task4Tests {
     @Test
@@ -143,5 +145,38 @@ public class Task4Tests {
         // Assert
         assertThat(result)
             .isEqualTo("MMCMXCIX");
+    }
+
+    @Test
+    @DisplayName("Negative numbers")
+    void negativeNumberTest() {
+        // Arrange
+        int value = -1;
+
+        // Act
+        Throwable exception = assertThrows(IllegalArgumentException.class,() -> Task4.intToRoman(value));
+        assertEquals("Cannot cast to roman!", exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("Zero test")
+    void zeroTest() {
+        // Arrange
+        int value = 0;
+
+        // Act
+        Throwable exception = assertThrows(IllegalArgumentException.class,() -> Task4.intToRoman(value));
+        assertEquals("Cannot cast to roman!", exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("Too big number test")
+    void tooBigNumber() {
+        // Arrange
+        int value = 10000;
+
+        // Act
+        Throwable exception = assertThrows(IllegalArgumentException.class,() -> Task4.intToRoman(value));
+        assertEquals("Cannot cast to roman!", exception.getMessage());
     }
 }

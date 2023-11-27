@@ -1,6 +1,7 @@
 package edu.hw3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,15 +14,15 @@ public final class Task5 {
             return new ArrayList<Contact>();
         }
 
-        ArrayList<Contact> contactBook = new ArrayList<>();
-        for (String s : namesList) {
+        List<Contact> contactBook = new ArrayList<>(Arrays.asList(namesList)
+            .stream().map(s -> {
             String[] words = s.split("\\ ");
-            contactBook.add(new Contact(words[0], words.length > 1 ? words[1] : ""));
-        }
+            return new Contact(words[0], words.length > 1 ? words[1] : "");
+        })
+            .toList());
 
         if (parameter.equals("ASC")) {
-            Collections.sort(
-                contactBook,
+            contactBook.sort(
                 (a, b) -> a.surname().equals("") || b.surname().equals("")
                     ? a.name().compareToIgnoreCase(b.name())
                     : a.surname().compareToIgnoreCase(b.surname())
@@ -34,6 +35,7 @@ public final class Task5 {
                     : b.surname().compareToIgnoreCase(a.surname())
             );
         }
+
         return contactBook;
     }
 }

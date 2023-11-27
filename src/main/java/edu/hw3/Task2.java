@@ -24,6 +24,8 @@ public final class Task2 {
             if (balance == 0) {
                 result.add(cluster.toString());
                 cluster.delete(0, cluster.length());
+            } else if (balance > 0) {
+                throw new IllegalArgumentException("Cannot clusterize!");
             }
         }
 
