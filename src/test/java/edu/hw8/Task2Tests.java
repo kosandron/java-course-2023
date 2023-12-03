@@ -3,14 +3,15 @@ package edu.hw8;
 import edu.hw8.Task2.FixedThreadPool;
 import edu.hw8.Task2.ThreadPool;
 import org.apache.logging.log4j.LogManager;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Task2Tests {
-
     @Test
-    void fibonacciThreadPool() {
+    @DisplayName("Fibonacci calculate test")
+    public void fibonacciCalculatorTest() {
         int threadPoolThreadsCount = 4;
         int[] fibonacciArray = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 

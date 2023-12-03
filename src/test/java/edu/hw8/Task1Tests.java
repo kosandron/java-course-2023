@@ -3,6 +3,7 @@ package edu.hw8;
 import edu.hw8.Task1.AnswerRepository;
 import edu.hw8.Task1.Client;
 import edu.hw8.Task1.Server;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,7 +11,8 @@ public class Task1Tests {
     private static final AnswerRepository answerRepository = new AnswerRepository();
 
     @Test
-    void connectivityCheck() {
+    @DisplayName("Connection test")
+    public void connectionTest() {
         Server server = new Server(5);
         new Thread(server).start();
 
