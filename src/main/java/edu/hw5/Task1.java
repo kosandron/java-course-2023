@@ -9,11 +9,12 @@ public final class Task1 {
     private final static String SPLITTER = " - ";
     private final static String TIME_REGEX = "\\d{4}-\\d{2}-\\d{2}, \\d{2}:\\d{2}";
     private final static String INPUT_TIME_REGEX = TIME_REGEX + SPLITTER + TIME_REGEX;
+    private final static int MINUTES_IN_HOUR = 60;
 
     private Task1() {
     }
 
-    public static String getTimeDifference(String time) {
+    private static long getTimeDifference(String time) {
         if (time == null) {
             throw new NullPointerException();
         }
@@ -29,6 +30,16 @@ public final class Task1 {
 
         return Duration
             .between(LocalDateTime.parse(start, formatter), LocalDateTime.parse(finish, formatter))
-            .toString();
+            .toMinutes();
+    }
+
+    public static String getAverageTime(String[] times) {
+        long minutes = 0;
+        for (String time : times) {
+            minutes += getTimeDifference(time);
+        }
+        minutes = minutes / times.length;
+
+        return minutes / MINUTES_IN_HOUR + "ч " + minutes % MINUTES_IN_HOUR + "м";
     }
 }

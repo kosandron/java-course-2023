@@ -2,7 +2,6 @@ package edu.hw5;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +30,13 @@ public final class Task2 {
             throw new NullPointerException();
         }
 
-        LocalDate friday = date.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
-        while (friday.getDayOfMonth() != MAIN_DATE) {
-            friday = friday.plusWeeks(1);
+        LocalDate mainDateInMonth = date.getDayOfMonth() >= MAIN_DATE
+            ? date.plusMonths(1).withDayOfMonth(MAIN_DATE)
+            : date.withDayOfMonth(MAIN_DATE);
+        while (mainDateInMonth.getDayOfWeek() != DayOfWeek.FRIDAY) {
+            mainDateInMonth = mainDateInMonth.plusMonths(1);
         }
 
-        return friday;
+        return mainDateInMonth;
     }
 }

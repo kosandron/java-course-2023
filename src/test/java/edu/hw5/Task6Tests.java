@@ -14,7 +14,8 @@ public class Task6Tests {
             Arguments.of("e", "e"),
             Arguments.of("abc", "jhvhbhyabczxcvbjbnujnm"),
             Arguments.of("res", "reshjvhj"),
-            Arguments.of("qwe", "hbvyuqwe")
+            Arguments.of("qwe", "hbvyuqwe"),
+            Arguments.of("abc", "ahbgdcu")
         );
     }
 
@@ -28,7 +29,7 @@ public class Task6Tests {
         return Stream.of(
             Arguments.of("a", ""),
             Arguments.of("cde", "cd"),
-            Arguments.of("dccd", "dcccd"),
+            Arguments.of("dccd", "dabcd"),
             Arguments.of("dc", "cd"),
             Arguments.of("a", "bcdefg")
         );

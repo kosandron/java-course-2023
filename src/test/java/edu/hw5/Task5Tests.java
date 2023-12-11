@@ -11,7 +11,8 @@ public class Task5Tests {
         return Stream.of(
             Arguments.of("A456BC134"),
             Arguments.of("E565XM178"),
-            Arguments.of("Y798CT789")
+            Arguments.of("Y798CT789"),
+            Arguments.of("Y798CT89")
         );
     }
 
