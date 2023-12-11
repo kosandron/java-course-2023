@@ -274,10 +274,10 @@ public class TasksTests {
         list.add(dog);
         list.add(spider);
         list.add(fish);
-        Integer answer = 2;
+        Long answer = 2L;
 
         // Act
-        Integer result = Task12.fatAnimalsCount(list);
+        Long result = Task12.fatAnimalsCount(list);
 
         // Assert
         assertThat(answer).isEqualTo(result);

@@ -7,6 +7,8 @@ public final class Task10 {
     }
 
     public static List<Animal> animalWithDifferentAgeAndPawsCount(List<Animal> animals) {
-        return animals.stream().filter(animal -> animal.age() != animal.paws()).toList();
+        return animals.stream()
+            .filter(animal -> animal.age() != animal.paws())
+            .toList();
     }
 }

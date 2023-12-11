@@ -12,22 +12,16 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public final class Task19 {
-    private static Set<ValidationError> errors;
+    private static Set<ValidationError> errors = new HashSet<>(List.of(
+        new EmptyNameError(),
+        new NegativeAgeError(),
+        new NegativeHeightError(),
+        new NegativeWeightError()));
 
     private Task19() {
-        errors = new HashSet<>();
-        errors.add(new EmptyNameError());
-        errors.add(new NegativeAgeError());
-        errors.add(new NegativeHeightError());
-        errors.add(new NegativeWeightError());
     }
 
     public static Map<String, Set<ValidationError>> validateAnimals(List<Animal> animals) {
-        errors = new HashSet<>();
-        errors.add(new EmptyNameError());
-        errors.add(new NegativeAgeError());
-        errors.add(new NegativeHeightError());
-        errors.add(new NegativeWeightError());
         return animals.stream()
             .filter(animal -> errors.stream().anyMatch(error -> !error.isValid(animal)))
             .collect(Collectors.toMap(p -> p.name(), p -> errors.stream().filter(error -> !error.isValid(p)).collect(

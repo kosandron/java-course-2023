@@ -7,6 +7,9 @@ public final class Task9 {
     }
 
     public static Integer sumOfPaws(List<Animal> animals) {
-        return animals.stream().map(Animal::paws).reduce(Integer::sum).get();
+        return animals.stream()
+            .map(Animal::paws)
+            .reduce(Integer::sum)
+            .orElse(0);
     }
 }

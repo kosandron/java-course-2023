@@ -7,6 +7,8 @@ public final class Task13 {
     }
 
     public static List<Animal> animalsWithLongName(List<Animal> animals) {
-        return animals.stream().filter(animal -> animal.name().split("\\ ").length > 2).toList();
+        return animals.stream()
+            .filter(animal -> animal.name().split("\\ ").length > 2)
+            .toList();
     }
 }

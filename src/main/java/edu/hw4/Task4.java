@@ -8,6 +8,8 @@ public final class Task4 {
     }
 
     public static Animal animalWithLongestName(List<Animal> animals) {
-        return animals.stream().max(Comparator.comparingInt(animal -> animal.name().length())).get();
+        return animals.stream()
+            .max(Comparator.comparingInt(animal -> animal.name().length()))
+            .orElse(null);
     }
 }

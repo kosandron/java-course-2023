@@ -8,6 +8,8 @@ public final class Task7 {
     }
 
     public static Animal oldestAnimal(List<Animal> animals) {
-        return animals.stream().max(Comparator.comparingInt(Animal::age)).get();
+        return animals.stream()
+            .max(Comparator.comparingInt(Animal::age))
+            .orElse(null);
     }
 }

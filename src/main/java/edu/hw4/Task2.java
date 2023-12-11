@@ -9,6 +9,8 @@ public final class Task2 {
 
     public static List<Animal> sortDecreasingByWeight(List<Animal> animals, int k) {
         return animals.stream()
-            .sorted(Comparator.comparing(Animal::weight).reversed()).limit(k).toList();
+            .sorted(Comparator.comparing(Animal::weight).reversed())
+            .limit(k)
+            .toList();
     }
 }
