@@ -50,10 +50,10 @@ public class ReflectionBenchmark {
     public void setup()
         throws Throwable {
         student = new Student("Ivan", "Ivanov");
-        method = Student.class.getMethod("name");
+        method = Student.class.getMethod("identify");
 
         final MethodHandles.Lookup lookup = MethodHandles.lookup();
-        methodHandle = lookup.findVirtual(Student.class, "name", MethodType.methodType(String.class));
+        methodHandle = lookup.findVirtual(Student.class, "identify", MethodType.methodType(String.class));
         CallSite site = LambdaMetafactory.metafactory(
             lookup,
             "apply",
@@ -67,7 +67,7 @@ public class ReflectionBenchmark {
 
     @Benchmark
     public void directAccess(Blackhole bh) {
-        String name = student.name();
+        String name = student.identify();
         bh.consume(name);
     }
 
