@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class Task6Tests {
     @Test
     void freePortTest() {
-        assertThat(PortScanner.isTcpPortUsed(211)).isFalse();
-        assertThat(PortScanner.isUdpPortUsed(211)).isFalse();
+        assertThat(PortScanner.isTcpPortUsed(1024)).isFalse();
+        assertThat(PortScanner.isUdpPortUsed(1024)).isFalse();
     }
 
     @Test
