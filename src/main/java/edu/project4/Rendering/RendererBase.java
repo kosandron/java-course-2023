@@ -20,6 +20,10 @@ public abstract class RendererBase implements Renderer {
         AffineFactor[] affineFactorsArray
     ) {
         Point point = world.getRandomPoint();
+        int iw = image.getWidth();
+        int ih = image.getHeight();
+        double ww = world.width();
+        double wh = world.height();
 
         for (int i = SKIP_ITERATIONS; i < iterations; i++) {
             int randomIndex = ThreadLocalRandom.current().nextInt(0, affineFactorsArray.length);
@@ -38,12 +42,11 @@ public abstract class RendererBase implements Renderer {
                         continue;
                     }
 
+
                     Pixel pixel =
                         image.getPixel(
-                            image.getWidth()
-                                - (int) ((world.width() / 2 - rotatedPoint.x()) / (world.width()) * image.getWidth()),
-                            image.getHeight()
-                                - (int) ((world.height() / 2 - rotatedPoint.y()) / world.height() * image.getHeight())
+                            iw - (int) ((ww / 2 - rotatedPoint.x()) / ww * iw),
+                            ih - (int) ((wh / 2 - rotatedPoint.y()) / wh * ih)
                         );
                     if (pixel == null) {
                         continue;

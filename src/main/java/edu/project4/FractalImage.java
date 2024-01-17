@@ -16,12 +16,12 @@ public class FractalImage {
         return new FractalImage(data, height, width);
     }
 
-    public boolean isPixelInImage(int x, int y) {
+    public boolean contains(int x, int y) {
         return x >= 0 && x < width && y >= 0 && y < height;
     }
 
     public Pixel getPixel(int x, int y) {
-        if (!isPixelInImage(x, y)) {
+        if (!contains(x, y)) {
             return null;
         }
         return data[y][x];
